@@ -12,9 +12,7 @@ function Navbar() {
     <>
       <nav className="bg-white border-gray-200 dark:bg-gray-900 border-b">
         <div className="max-w-(--breakpoint-xl) flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Alireza</span>
-          </a>
           <button onClick={toggleMenu} className="text-black dark:text-white inline-block md:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -31,9 +29,7 @@ function Navbar() {
           </svg>
         </div>
         <div className="flex justify-center mt-8">
-          <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Alireza</span>
-          </a>
         </div>
         <div className="mt-6">
           <SwitchThemeMobile />
