@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-bg-color: #111828;
+
+  --shadow-custome: 0 0 7px;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility nav-link {
+  @apply block py-2 px-3 text-black rounded-sm md:bg-transparent md:p-0 dark:text-white;
+}
+
+@utility nav-link--mobile {
+  @apply block py-2 px-3 rounded-sm md:bg-transparent md:p-0 text-white;
+}
+
+@utility nav-link--active {
+  @apply block py-2 px-3 text-blue-700 rounded-sm md:bg-transparent md:p-0 md:text-blue-700;
+}
+
+@layer base{
+    body{
+        @apply dark:bg-zinc-950 transition-all;
+    }
+}
+@layer components {
+    video:fullscreen {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+  }
+  video::-webkit-media-controls {
+    display: none !important;
+  }
+  video::-moz-media-controls {
+    display: none !important;
+  }
+  video::-ms-media-controls {
+    display: none !important;
+  }
+}
